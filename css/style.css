@@ -1,0 +1,215 @@
+/* --- BASE Y DISEÑO FLUIDO --- */
+* {
+    box-sizing: border-box; /* Modelo de cajas */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    display: flex; /* Flexbox para estructura global */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- SELECTORES Y MODELO DE CAJAS --- */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+}
+
+/* ESTILO PARA EL INDICADOR DE CADA PÁGINA */
+.iniciodecadapagina {
+    display: inline-block;    
+    color: #3498db;            
+    font-weight: 700;
+    font-size: 0.8rem;       
+    text-transform: uppercase; 
+    letter-spacing: 1px;       
+    margin-bottom: 5px;        
+    padding-left: 10px;       
+}
+
+/* --- FLEXBOX EN NAVEGACIÓN --- */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+/* --- EFECTOS CON ALGUNAS PSEUDOCLASES --- */
+nav a:hover {
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+nav a:focus {
+    border: 1px solid #fff;
+    outline: none;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: #e67e22;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+    background-color: #d35400;
+}
+
+/* --- DISTRIBUCIÓN DE MI CONTENIDO PRINCIPAL (MOBILE FIRST) --- */
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    gap: 30px;
+}
+
+.inicio {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+aside {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #eee;
+}
+
+footer {
+    background: #e67e22;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* --- MEDIA QUERIES INDEX.HTML (PARA TABLET Y DESKTOP) --- */
+
+/* Como se tiene que ver en una Tablet (768px en adelante) */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row; /* Contenido y lateral en fila */
+        padding: 40px;
+    }
+
+    .inicio {
+        flex: 2; /* Quiero que el contenido principal ocupe más espacio */
+    }
+
+    aside {
+        flex: 1;
+    }
+}
+
+/* Como se tiene que ver en el Desktop (1024px en adelante) */
+@media (min-width: 1024px) {
+    header, footer {
+        padding: 2rem 10%;
+    }
+    
+    main {
+        padding: 40px 10%;
+    }
+}
+
+/* SELECTOR DE CLASE PARA EL TÍTULO PRINCIPAL DE MI ARCHIVO BIOGRAFIA.HTML*/
+.biografia {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+}
+
+.descripcion {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* --- MANEJO DE IMÁGEN --- */
+figure {
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #ddd; /* Modelo de cajas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fotobiografia {
+    max-width: 100%; /* Diseño fluido */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+}
+
+/* --- SECCIÓN DE TEXTO --- */
+section h3 {
+    margin-top: 25px;
+    padding-left: 10px;
+    border-left: 5px solid #e67e22; /* Modelo de cajas */
+    color: #d35400;
+}
+
+/* --- FLEXBOX EN SECCIÓN PRINCIPAL --- */
+main section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio uniforme entre bloques */
+}
+
+/* --- MEDIA QUERIES BIOGRAFIA.HTML (PARA TABLET Y ESCRITORIO) --- */
+
+@media (min-width: 768px) {
+    /* En tablet/PC la imagen y el texto de visión pueden alinearse */
+    figure {
+        flex-direction: row; 
+        gap: 20px;
+        padding: 25px;
+    }
+
+    .fotobiografia {
+        width: 300px; /* Tamaño fijo en pantallas grandes */
+    }
+
+    figcaption {
+        text-align: left;
+    }
+}
+
+/* --- DINAMISMO (PSEUDOCLASES) --- */
+.fotobiografia:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
