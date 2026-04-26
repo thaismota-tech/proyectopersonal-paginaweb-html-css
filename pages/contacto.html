@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+        <div class="iniciodecadapagina">CONTACTO:</div>
+            <nav>
+              <ul>
+                <li><a href="/index.html">Página inicial</a></li>
+                <li><a href="biografia.html">Biografía</a></li>
+                <li><a href="servicios.html">Nuestros servicios</a></li>
+                <li><a href="contacto.html">Contacta comigo</a></li>
+              </ul>
+            </nav>    
+    </header>
+    <main>
+        <section>
+            <h1 class="contacto">¿Cómo contactarme para más información?</h1>
+            <h2 class="solicitarcontacto">Ponte en contacto conmigo a través de este formulario:</h2> 
+            
+            <form action="/enviar-contacto" method="POST">
+            <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <h3>¿En qué podemos ayudarte?</h3>
+        
+        <div>
+            <label for="consultoria">Solicita nuestra consultoría gratis:</label>
+            <input type="checkbox" id="consultoria" name="opcion" value="consultoria">
+        </div>
+
+         <div>
+            <label for="mensaje">Tu mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="7" required></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+
+            </form>
+        </section>
+    </main>
+    <footer>
+    <p>&copy; 2026 Mi Página Web. Todos los derechos reservados.</p>
+    <p><a href="mailto:esther@mipaginaweb.com">esther@mipaginaweb.com</a></p>
+    </footer>     
+</body>
+</html>

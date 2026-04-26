@@ -1,0 +1,266 @@
+/* --- 1. BASE Y DISEÑO FLUIDO --- */
+* {
+    box-sizing: border-box; /* Modelo de cajas */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    display: flex; /* Flexbox para estructura global */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- 2. SELECTORES Y MODELO DE CAJAS (HEADER/NAV) --- */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+}
+
+.iniciodecadapagina {
+    display: inline-block;    
+    color: #3498db;            
+    font-weight: 700;
+    font-size: 0.8rem;       
+    text-transform: uppercase; 
+    letter-spacing: 1px;       
+    margin-bottom: 5px;        
+    padding-left: 10px;       
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+/* --- 3. EFECTOS Y DINAMISMO (PSEUDOCLASES) --- */
+nav a:hover {
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+nav a:focus {
+    border: 1px solid #fff;
+    outline: none;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: #e67e22;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+    background-color: #d35400;
+}
+
+/* --- 4. CONTENIDO PRINCIPAL (MOBILE FIRST) --- */
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    gap: 30px;
+}
+
+.inicio {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+aside {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #eee;
+}
+
+footer {
+    background: #e67e22;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+/* --- 5. ESTILOS BIOGRAFIA.HTML --- */
+.biografia {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+}
+
+figure {
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fotobiografia {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.fotobiografia:hover {
+    transform: scale(1.02);
+}
+
+/* --- 6. ESTILOS SERVICIOS.HTML --- */
+.servicios-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.servicio-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.servicio-card:hover {
+    border-color: #3498db;
+    transform: translateY(-5px);
+}
+
+.servicios img, .servicios video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+    margin-top: 10px;
+}
+
+/* --- 7. ESTILOS CONTACTO.HTML  --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #154eb7;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    color: white; /* Para que los textos de label se lean sobre azul */
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Arimo', sans-serif;
+    transition: 0.3s;
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    border-color: #e67e22;
+    outline: none;
+    background-color: #fffaf5;
+}
+
+button[type="submit"] {
+    background-color: #ffffff; /* Blanco para contraste */
+    color: #154eb7;            /* Texto azul */
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #e67e22;
+    color: white;
+}
+
+/* Clase para alinear checkbox y label en horizontal */
+.checkbox-group {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+/* --- 8. MEDIA QUERIES (TABLET Y DESKTOP) --- */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+        padding: 40px;
+    }
+
+    .inicio, .servicios-container {
+        flex: 2;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    aside {
+        flex: 1;
+    }
+
+    figure {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .fotobiografia {
+        width: 300px;
+    }
+}
+
+@media (min-width: 1024px) {
+    header, footer {
+        padding: 2rem 10%;
+    }
+    
+    main {
+        padding: 40px 10%;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
