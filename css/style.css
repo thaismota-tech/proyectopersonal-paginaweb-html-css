@@ -1,4 +1,4 @@
-/* --- BASE Y DISEÑO FLUIDO --- */
+/* --- 1. BASE Y DISEÑO FLUIDO --- */
 * {
     box-sizing: border-box; /* Modelo de cajas */
     margin: 0;
@@ -13,14 +13,13 @@ body {
     min-height: 100vh;
 }
 
-/* --- SELECTORES Y MODELO DE CAJAS --- */
+/* --- 2. SELECTORES Y MODELO DE CAJAS (HEADER/NAV) --- */
 header {
     background-color: #2c3e50;
     color: white;
     padding: 1.5rem;
 }
 
-/* ESTILO PARA EL INDICADOR DE CADA PÁGINA */
 .iniciodecadapagina {
     display: inline-block;    
     color: #3498db;            
@@ -32,7 +31,6 @@ header {
     padding-left: 10px;       
 }
 
-/* --- FLEXBOX EN NAVEGACIÓN --- */
 nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -49,7 +47,7 @@ nav a {
     transition: 0.3s;
 }
 
-/* --- EFECTOS CON ALGUNAS PSEUDOCLASES --- */
+/* --- 3. EFECTOS Y DINAMISMO (PSEUDOCLASES) --- */
 nav a:hover {
     background-color: #3498db;
     border-radius: 5px;
@@ -76,7 +74,7 @@ nav a:focus {
     background-color: #d35400;
 }
 
-/* --- DISTRIBUCIÓN DE MI CONTENIDO PRINCIPAL (MOBILE FIRST) --- */
+/* --- 4. CONTENIDO PRINCIPAL (MOBILE FIRST) --- */
 main {
     display: flex;
     flex-direction: column;
@@ -102,38 +100,10 @@ footer {
     color: white;
     text-align: center;
     padding: 2rem;
+    margin-top: auto;
 }
 
-/* --- MEDIA QUERIES INDEX.HTML (PARA TABLET Y DESKTOP) --- */
-
-/* Como se tiene que ver en una Tablet (768px en adelante) */
-@media (min-width: 768px) {
-    main {
-        flex-direction: row; /* Contenido y lateral en fila */
-        padding: 40px;
-    }
-
-    .inicio {
-        flex: 2; /* Quiero que el contenido principal ocupe más espacio */
-    }
-
-    aside {
-        flex: 1;
-    }
-}
-
-/* Como se tiene que ver en el Desktop (1024px en adelante) */
-@media (min-width: 1024px) {
-    header, footer {
-        padding: 2rem 10%;
-    }
-    
-    main {
-        padding: 40px 10%;
-    }
-}
-
-/* SELECTOR DE CLASE PARA EL TÍTULO PRINCIPAL DE MI ARCHIVO BIOGRAFIA.HTML*/
+/* --- 5. ESTILOS BIOGRAFIA.HTML --- */
 .biografia {
     color: #2c3e50;
     margin-bottom: 1rem;
@@ -141,148 +111,56 @@ footer {
     display: inline-block;
 }
 
-.descripcion {
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: #555;
-    line-height: 1.4;
-}
-
-/* --- MANEJO DE IMÁGEN --- */
 figure {
     margin: 20px 0;
     background-color: #f8f9fa;
     padding: 15px;
-    border: 1px solid #ddd; /* Modelo de cajas */
+    border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .fotobiografia {
-    max-width: 100%; /* Diseño fluido */
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-figcaption {
-    margin-top: 10px;
-    font-size: 0.85rem;
-    font-style: italic;
-    color: #666;
-    text-align: center;
-}
-
-/* --- SECCIÓN DE TEXTO --- */
-section h3 {
-    margin-top: 25px;
-    padding-left: 10px;
-    border-left: 5px solid #e67e22; /* Modelo de cajas */
-    color: #d35400;
-}
-
-/* --- FLEXBOX EN SECCIÓN PRINCIPAL --- */
-main section {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espacio uniforme entre bloques */
-}
-
-/* --- MEDIA QUERIES BIOGRAFIA.HTML (PARA TABLET Y ESCRITORIO) --- */
-
-@media (min-width: 768px) {
-    /* En tablet/PC la imagen y el texto de visión pueden alinearse */
-    figure {
-        flex-direction: row; 
-        gap: 20px;
-        padding: 25px;
-    }
-
-    .fotobiografia {
-        width: 300px; /* Tamaño fijo en pantallas grandes */
-    }
-
-    figcaption {
-        text-align: left;
-    }
-}
-
-/* --- DINAMISMO (PSEUDOCLASES) --- */
-.fotobiografia:hover {
-    transform: scale(1.02);
     transition: transform 0.3s ease;
 }
 
-/* --- ESTILOS PARA MI DOCUMENTO SERVICIOS.HTML --- */
-
-/* Selector de clase para el título principal */
-.servicios {
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
+.fotobiografia:hover {
+    transform: scale(1.02);
 }
 
-/* Contenedor de servicios con Flexbox */
+/* --- 6. ESTILOS SERVICIOS.HTML --- */
 .servicios-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Modelo de cajas para cada servicio */
 .servicio-card {
     background: #fff;
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     transition: 0.3s;
 }
 
-/* Efecto hover para dinamismo */
 .servicio-card:hover {
     border-color: #3498db;
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
-}
-
-.servicio-card h2 {
-    color: #e67e22;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
+    transform: translateY(-5px);
 }
 
 .servicios img, .servicios video {
     max-width: 100%;
     height: auto;
-    border-radius: 20px;
+    border-radius: 10px; 
+    margin-top: 10px;
 }
 
-/* Estilo para multimedia (Imágenes/Video) */
-.media-content {
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 5px;
-    display: block;
-}
-
-/* Media Query para Servicios (Tablet/Desktop) */
-@media (min-width: 768px) {
-    .servicios-container {
-        flex-direction: row; /* Servicios en fila */
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .servicio-card {
-        flex: 1 1 300px; /* Tamaño flexible con mínimo de 300px */
-        max-width: 400px;
-    }
-}
-
-/* --- ESTILOS MI DOCUMENTO CONTACTO.HTML --- */
-
+/* --- 7. ESTILOS CONTACTO.HTML  --- */
 form {
     display: flex;
     flex-direction: column;
@@ -291,38 +169,35 @@ form {
     padding: 25px;
     border-radius: 8px;
     border: 1px solid #eee;
+    color: white; /* Para que los textos de label se lean sobre azul */
 }
 
-/* Selectores compuestos y de etiquetas */
 form div {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-/* Modelo de cajas en inputs */
 input[type="text"],
 input[type="email"],
 textarea {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: 'Arimo', sans-serif; /* Uso de otra de mis fuentes */
-    transition: border-color 0.3s;
+    font-family: 'Arimo', sans-serif;
+    transition: 0.3s;
+    width: 100%;
 }
 
-/* Pseudoclase :focus para dinamismo */
-input:focus, 
-textarea:focus {
-    border-color: #9e4d06;
+input:focus, textarea:focus {
+    border-color: #e67e22;
     outline: none;
     background-color: #fffaf5;
 }
 
-/* Estilo para el botón de envío */
 button[type="submit"] {
-    background-color: #154eb7
-    color: white;
+    background-color: #ffffff; /* Blanco para contraste */
+    color: #154eb7;            /* Texto azul */
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -334,19 +209,58 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #e67e22;
+    color: white;
 }
 
-/* Para que el checkbox salga en línea */
-.checkbox-linea {
-    flex-direction: row !important; /* Fuerza a que sea fila */
+/* Clase para alinear checkbox y label en horizontal */
+.checkbox-group {
+    flex-direction: row !important;
     align-items: center;
     gap: 10px;
 }
 
-/* Media Query para centrar el formulario en Desktop */
+.checkbox-group input {
+    width: auto;
+}
+
+/* --- 8. MEDIA QUERIES (TABLET Y DESKTOP) --- */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+        padding: 40px;
+    }
+
+    .inicio, .servicios-container {
+        flex: 2;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    aside {
+        flex: 1;
+    }
+
+    figure {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .fotobiografia {
+        width: 300px;
+    }
+}
+
 @media (min-width: 1024px) {
+    header, footer {
+        padding: 2rem 10%;
+    }
+    
+    main {
+        padding: 40px 10%;
+    }
+
     form {
         max-width: 600px;
-        margin: 0 auto; /* Centrado horizontal */
+        margin: 0 auto;
     }
 }
