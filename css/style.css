@@ -287,7 +287,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background: #fdfdfd;
+    background: #154eb7;
     padding: 25px;
     border-radius: 8px;
     border: 1px solid #eee;
@@ -304,7 +304,7 @@ form div {
 input[type="text"],
 input[type="email"],
 textarea {
-    padding: 12px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-family: 'Arimo', sans-serif; /* Uso de otra de mis fuentes */
@@ -314,14 +314,14 @@ textarea {
 /* Pseudoclase :focus para dinamismo */
 input:focus, 
 textarea:focus {
-    border-color: #e67e22;
+    border-color: #9e4d06;
     outline: none;
     background-color: #fffaf5;
 }
 
 /* Estilo para el botón de envío */
 button[type="submit"] {
-    background-color: #2c3e50;
+    background-color: #154eb7
     color: white;
     padding: 15px;
     border: none;
@@ -333,12 +333,12 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #3498db;
+    background-color: #e67e22;
 }
 
-/* Checkbox alineado horizontalmente */
-.checkbox-group {
-    flex-direction: row;
+/* Para que el checkbox salga en línea */
+.checkbox-linea {
+    flex-direction: row !important; /* Fuerza a que sea fila */
     align-items: center;
     gap: 10px;
 }
